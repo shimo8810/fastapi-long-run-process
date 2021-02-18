@@ -32,7 +32,7 @@ TASKS = {}
 
 
 @app.post('/task', status_code=202)
-async def receive_task(background_tasks: BackgroundTasks):
+async def create_task(background_tasks: BackgroundTasks):
     task = Task()
     TASKS[task.id] = task
     background_tasks.add_task(task)
